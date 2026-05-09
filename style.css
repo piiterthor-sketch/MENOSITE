@@ -37,7 +37,9 @@ h2 {
 h3 {
     font-size: 24px;
     margin-bottom: 10px;
-    text-align: center; /* Esta linha faz a mágica */
+    text-align: center;
+    display: block;  /* Garante que ele ocupe a linha toda */
+    width: 100%;     /* Força a largura total */
 }
 
 /* HEADER */
