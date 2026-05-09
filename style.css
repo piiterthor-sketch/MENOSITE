@@ -35,8 +35,9 @@ h2 {
 }
 
 h3 {
-    font-size: 24px; /* Menor que o h2, para sub-títulos */
+    font-size: 24px;
     margin-bottom: 10px;
+    text-align: center; /* Esta linha faz a mágica */
 }
 
 /* HEADER */
