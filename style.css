@@ -131,10 +131,9 @@ h3 {
 }
 
 .product-description {
-  font-size: 300px;
-  line-height: 2.0;
-  color: #555;
-  text-align: center; 
+    text-align: center;
+    font-weight: bold;
+
 }
 
 /* SOBRE */
