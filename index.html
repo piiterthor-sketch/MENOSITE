@@ -3,23 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>MÉNŌ | Eletrônicos Premium</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     :root{
       --bg: #F2EEE8;
+      --card: #ECE7E0;
       --text: #1A1A1A;
-      --support: #D9D4CE;
       --accent: #3E4A3F;
+      --border: #D9D4CE;
     }
 
     body{
@@ -28,14 +30,14 @@
       font-family: 'Inter', sans-serif;
     }
 
-    h1,h2,h3,h4,h5{
+    h1,h2,h3,h4{
       font-family: 'Cormorant Garamond', serif;
     }
 
     .btn-main{
       background: var(--accent);
       color: white;
-      transition: .3s;
+      transition: 0.3s;
     }
 
     .btn-main:hover{
@@ -43,54 +45,124 @@
       transform: translateY(-2px);
     }
 
-    .card-hover{
-      transition: .4s;
+    .product-card{
+      background: white;
+      border-radius: 30px;
+      padding: 20px;
+      transition: .3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
-    .card-hover:hover{
-      transform: translateY(-6px);
+    .product-card:hover{
+      transform: translateY(-5px);
+    }
+
+    .product-image{
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 24px;
+    }
+
+    .product-title{
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 24px;
+      margin-bottom: 14px;
+      min-height: 20px;
+    }
+
+    .product-description{
+      font-size: 13px;
+      line-height: 1.8;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #555;
+      min-height: 90px;
+    }
+
+    .section-label{
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .text-content{
+      font-size: 14px;
+      line-height: 1.9;
+      color: #555;
     }
   </style>
 </head>
 
 <body>
 
-  <header class="w-full border-b border-[#d7d2cb] bg-[#F2EEE8]/95 backdrop-blur sticky top-0 z-50">
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-[#F2EEE8]/95 border-b border-[#d9d4ce]">
+
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
-      <div>
-        <h1 class="text-4xl tracking-wide">MÉNŌ</h1>
-      </div>
+      <h1 class="text-4xl tracking-wide">
+        MÉNŌ
+      </h1>
 
       <nav class="hidden md:flex items-center gap-10 text-sm uppercase tracking-[2px]">
-        <a href="#" class="hover:text-[#3E4A3F] transition">Home</a>
-        <a href="#produtos" class="hover:text-[#3E4A3F] transition">Produtos</a>
-        <a href="#sobre" class="hover:text-[#3E4A3F] transition">Sobre</a>
-        <a href="#contato" class="hover:text-[#3E4A3F] transition">Contato</a>
+
+        <a href="#" class="hover:text-[#3E4A3F] transition">
+          Home
+        </a>
+
+        <a href="#produtos" class="hover:text-[#3E4A3F] transition">
+          Produtos
+        </a>
+
+        <a href="#sobre" class="hover:text-[#3E4A3F] transition">
+          Sobre
+        </a>
+
+        <a href="#contato" class="hover:text-[#3E4A3F] transition">
+          Contato
+        </a>
+
       </nav>
 
-      <div class="flex items-center gap-4">
-        <a href="https://www.instagram.com/meno.holding/"target="_blank"
-            class="btn-main px-5 py-2 rounded-full text-sm">
+      <div class="flex items-center gap-3">
+
+        <a 
+          href="https://www.instagram.com/meno.holding/" 
+          target="_blank"
+          class="btn-main px-5 py-2 rounded-full text-sm"
+        >
           Instagram
         </a>
 
-        <a href="https://wa.me/3199258704"target="_blank"
-          class="btn-main px-5 py-2 rounded-full text-sm">
+        <a 
+          href="https://wa.me/553199258704" 
+          target="_blank"
+          class="btn-main px-5 py-2 rounded-full text-sm"
+        >
           WhatsApp
         </a>
+
       </div>
 
     </div>
+
   </header>
 
+  <!-- HERO -->
   <section class="max-w-7xl mx-auto px-6 py-16 lg:py-24">
 
     <div class="grid lg:grid-cols-2 gap-14 items-center">
 
       <div>
 
-        <p class="uppercase tracking-[4px] text-sm mb-5 text-[#3E4A3F]">
+        <p class="section-label mb-5">
           Tecnologia minimalista
         </p>
 
@@ -98,26 +170,23 @@
           Eletrônicos que combinam com seu estilo.
         </h2>
 
-        <p class="uppercase tracking-[3px] text-sm text-[#3E4A3F] mb-4">
-          Produtos premium com design sofisticado, acabamento elegante e
-          experiência moderna para seu dia a dia.<br/><br
-          Na MÉNŌ você encontra:<br/><br/>
-         -Produtos selecionados.<br/><br/>
-         -Suporte durante o uso.<br/><br/>
-         -Consultoria antes da compra para entender o que você realmente precisa.
+        <p class="text-content max-w-xl">
+          Produtos premium com design sofisticado e experiência moderna para o seu dia a dia.
+          <br><br>
+          Na MÉNŌ você encontra produtos selecionados, suporte durante o uso e consultoria personalizada para escolher a melhor opção para sua necessidade.
         </p>
 
       </div>
 
       <div class="relative">
 
-        <div class="absolute -top-6 -left-6 w-full h-full bg-[#D9D4CE] rounded-[40px]"></div>
+        <div class="absolute -top-5 -left-5 w-full h-full bg-[#D9D4CE] rounded-[40px]"></div>
 
-        <img src="images/macbook.jpg" 
-      
-          alt="Eletrônicos premium"
-          class="relative z-10 rounded-[40px] shadow-2xl object-cover w-full h-[350px]"
-        />
+        <img 
+          src="images/macbook.jpg"
+          alt="Eletrônicos Premium"
+          class="relative z-10 w-full h-[400px] object-cover rounded-[40px] shadow-2xl"
+        >
 
       </div>
 
@@ -125,162 +194,144 @@
 
   </section>
 
+  <!-- PRODUTOS -->
   <section id="produtos" class="py-24 bg-[#ECE7E0]">
 
     <div class="max-w-7xl mx-auto px-6">
 
       <div class="text-center mb-16">
-        <p class="uppercase tracking-[3px] text-sm text-[#3E4A3F] mb-3">
+
+        <p class="section-label mb-3">
           coleção
         </p>
 
-        <h2 class="text-6xl">
+        <h2 class="text-5xl lg:text-6xl">
           Novidades
         </h2>
+
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-       <div class="product-card text-center"> <img src="images/17pro2.jpg"
-          class="relative z-10 rounded-[40px] shadow-2xl object-cover w-full h-[350px]"
-        />
+        <!-- PRODUTO 1 -->
+        <div class="product-card text-center">
 
-        <p class="uppercase tracking-[3px] text-sm text-[#3E4A3F] mb-4"> iphone 17 Pro Max
-        </p>
+          <img 
+            src="images/17pro2.jpg"
+            alt="iPhone 17 Pro Max"
+            class="product-image"
+          >
 
-        <p class="uppercase tracking-[3px] text-sm text-[#3E4A3F] mb-4">
-         Performance Incomparável: Equipado com o novo chip A19 Pro
-        </p>
+          <h3 class="product-title">
+            iPhone 17 Pro Max
+          </h3>
 
-        <div class="mt-6">
-          <a href="https://wa.me/3199258704" target="_blank"
-                class="btn-main px-5 py-2 rounded-full text-sm">
-                Comprar
-              </a>
-        </div>
-
-      </div>
-
-         <div class="product-card text-center"> <img src="images/17.jpg"
-          class="relative z-10 rounded-[40px] shadow-2xl object-cover w-full h-[350px]"/>
-
-        <p class="uppercase tracking-[3px] text-sm text-[#3E4A3F] mb-4">
-          iphone 17
-          <br/>
-        </p>
-        <p class="uppercase tracking-[3px] text-sm text-[#3E4A3F] mb-4">
-          iPhone 17 chega para equilibrar sofisticação e desempenho
-        </p>
-
-        <div class="mt-6">
-          <a href="https://wa.me/3199258704" target="_blank"
-                class="btn-main px-5 py-2 rounded-full text-sm">
-                Comprar
-              </a>
-        </div>
-      </div>
-
-         <div class="product-card text-center"> <img src="images/neo.jpg"
-          class="relative z-10 rounded-[40px] shadow-2xl object-cover w-full h-[350px]"
-        />
-
-        <p class="uppercase tracking-[3px] text-sm text-[#3E4A3F] mb-4">
-          Macbook neo
-        </p>
-      <br/>
-        <p class="uppercase tracking-[3px] text-sm text-[#3E4A3F] mb-4">
-          O MacBook Neo nova tecnologia com chip A19
-        </p>
-
-        <div class="mt-6">
-          <a href="https://wa.me/3199258704" target="_blank"
-                class="btn-main px-5 py-2 rounded-full text-sm">
-                Comprar
-              </a>
-        </div>
-
-      </div>
-
-        <div class="product-card text-center"> <img src="images/macbook.jpg"
-          class="relative z-10 rounded-[40px] shadow-2xl object-cover w-full h-[350px]"
-        />
-
-        <p class="uppercase tracking-[3px] text-sm text-[#3E4A3F] mb-4">
-          Macbooks
-        </p>
-       <br/>
-        <p class="uppercase tracking-[3px] text-sm text-[#3E4A3F] mb-4">
-          M1, M2, M3 e M4 e suas variantes Pro e Max
-        </p>
-
-        <div class="mt-6">
-          <a href="https://wa.me/3199258704" target="_blank"
-                class="btn-main px-5 py-2 rounded-full text-sm">
-                Comprar
-              </a>
-        </div>
-          
-      </div>
-
-    </div>
-
-  </section>
-
-  <section id="sobre" class="py-24">
-
-    <div class="max-w-7xl mx-auto px-6">
-
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-
-        <img
-          src="images/setup.jpg"
-          class="rounded-[40px] h-[550px] object-cover w-full"
-        />
-
-        <div>
-
-          <p class="uppercase tracking-[3px] text-sm text-[#3E4A3F] mb-4">
-            sobre a marca
+          <p class="product-description">
+            Equipado com o novo chip A19 Pro para oferecer máxima performance e velocidade.
           </p>
 
-          <h2 class="text-6xl leading-tight mb-8">
-            Design elegante para quem ama tecnologia.
-          </h2>
+          <div class="mt-auto pt-6">
 
-          <p class="uppercase tracking-[3px] text-sm text-[#3E4A3F] mb-4">
-Sobre a Marca<br/><br/>
+            <a 
+              href="https://wa.me/553199258704"
+              target="_blank"
+              class="btn-main px-5 py-2 rounded-full text-sm inline-block"
+            >
+              Comprar
+            </a>
 
-“Nossos princípios não mudam,e nisso nos mantemos firmes.” - maior. <br/>
+          </div>
 
-No grego antigo, Ménō significa permanecer e manter a constância. Em um mundo de inovações contínuas e um mercado cheio de incertezas, nós nascemos para ser um ponto de equilíbrio trazendo verdade e transparência.<br/>
+        </div>
 
-Você não precisa ficar sozinho com as incertezas de qual seria a melhor escolha ou qual o momento certo para adquiri-la. Estamos aqui para trazer a clareza e a tranquilidade que você busca nas suas decisões.<br/>
+        <!-- PRODUTO 2 -->
+        <div class="product-card text-center">
 
-E nisso nos mantemos firmes.<br/>
+          <img 
+            src="images/17.jpg"
+            alt="iPhone 17"
+            class="product-image"
+          >
 
-hold fast.
+          <h3 class="product-title">
+            iPhone 17
+          </h3>
+
+          <p class="product-description">
+            Sofisticação, desempenho e experiência premium para o uso diário.
           </p>
 
- <div class="bg-[#ECE7E0] rounded-[25px] p-10 col-span-2 w-full max-w-4xl">
+          <div class="mt-auto pt-6">
 
-<div class="bg-[#ECE7E0] rounded-[25px] p-10 col-span-2 w-full max-w-4xl">
-    <h3 class="text-8xl mb-6">+5k</h3>
-    <p>Clientes satisfeitos</p>
-  </div>
-<div class="bg-[#ECE7E0] rounded-[25px] p-10 col-span-2 w-full max-w-4xl">
-    <h3 class="text-8xl mb-6">24h</h3>
+            <a 
+              href="https://wa.me/553199258704"
+              target="_blank"
+              class="btn-main px-5 py-2 rounded-full text-sm inline-block"
+            >
+              Comprar
+            </a>
 
-<p class="uppercase tracking-[3px] text-[10px] text-[#3E4A3F] mb-4">
-      Suporte online<br/>
-      Uma experiência simples e segura:<br/>
-      - você realiza o pagamento somente no momento da entrega<br/>
-      - aceitamos PIX ou cartão de crédito em até 21x*<br/>
-      - entregas com nossa própria logística parceiros selecionados<br/>
-      - operação em Belo Horizonte, São Paulo, Rio de Janeiro e Curitiba
-    </p>
-  </div>
+          </div>
 
-</div>
+        </div>
+
+        <!-- PRODUTO 3 -->
+        <div class="product-card text-center">
+
+          <img 
+            src="images/neo.jpg"
+            alt="MacBook Neo"
+            class="product-image"
+          >
+
+          <h3 class="product-title">
+            MacBook Neo
+          </h3>
+
+          <p class="product-description">
+            Tecnologia moderna com desempenho avançado e acabamento elegante.
+          </p>
+
+          <div class="mt-auto pt-6">
+
+            <a 
+              href="https://wa.me/553199258704"
+              target="_blank"
+              class="btn-main px-5 py-2 rounded-full text-sm inline-block"
+            >
+              Comprar
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- PRODUTO 4 -->
+        <div class="product-card text-center">
+
+          <img 
+            src="images/macbook.jpg"
+            alt="MacBooks"
+            class="product-image"
+          >
+
+          <h3 class="product-title">
+            MacBooks
+          </h3>
+
+          <p class="product-description">
+            Linha completa M1, M2, M3 e M4 com versões Pro e Max.
+          </p>
+
+          <div class="mt-auto pt-6">
+
+            <a 
+              href="https://wa.me/553199258704"
+              target="_blank"
+              class="btn-main px-5 py-2 rounded-full text-sm inline-block"
+            >
+              Comprar
+            </a>
 
           </div>
 
@@ -292,6 +343,91 @@ hold fast.
 
   </section>
 
+  <!-- SOBRE -->
+  <section id="sobre" class="py-24">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <img
+          src="images/setup.jpg"
+          alt="Setup"
+          class="w-full h-[550px] object-cover rounded-[40px]"
+        >
+
+        <div>
+
+          <p class="section-label mb-4">
+            Sobre a marca
+          </p>
+
+          <h2 class="text-5xl lg:text-6xl leading-tight mb-8">
+            Design elegante para quem ama tecnologia.
+          </h2>
+
+          <div class="text-content space-y-5">
+
+            <p>
+              “Nossos princípios não mudam, e nisso nos mantemos firmes.”
+            </p>
+
+            <p>
+              No grego antigo, Ménō significa permanecer e manter a constância.
+              Em um mercado cheio de incertezas, nascemos para trazer verdade,
+              clareza e transparência.
+            </p>
+
+            <p>
+              Você não precisa enfrentar sozinho as dúvidas sobre tecnologia.
+              Estamos aqui para ajudar na melhor escolha para o seu momento.
+            </p>
+
+            <p>
+              Hold fast.
+            </p>
+
+          </div>
+
+          <!-- CARDS -->
+          <div class="grid md:grid-cols-2 gap-6 mt-10">
+
+            <div class="bg-[#ECE7E0] rounded-[30px] p-8">
+
+              <h3 class="text-6xl mb-4">
+                +5k
+              </h3>
+
+              <p class="text-content">
+                Clientes satisfeitos.
+              </p>
+
+            </div>
+
+            <div class="bg-[#ECE7E0] rounded-[30px] p-8">
+
+              <h3 class="text-6xl mb-4">
+                24h
+              </h3>
+
+              <p class="text-content">
+                Suporte online, pagamento na entrega, PIX e cartão em até 21x.
+                Operação em Belo Horizonte, São Paulo, Rio de Janeiro e Curitiba.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTATO -->
   <section id="contato" class="py-24 bg-[#1A1A1A] text-white">
 
     <div class="max-w-4xl mx-auto px-6 text-center">
@@ -300,58 +436,72 @@ hold fast.
         Contato
       </p>
 
-      <h2 class="text-6xl mb-8">
+      <h2 class="text-5xl lg:text-6xl mb-8">
         Vamos conversar.
       </h2>
 
-     <p class="uppercase tracking-[3px] text-sm text-[#3E4A3F] mb-4">
+      <p class="text-sm tracking-[2px] text-[#d0d0d0] mb-10 uppercase">
         Fale conosco pelo WhatsApp ou acompanhe novidades no Instagram.
       </p>
 
       <div class="flex flex-wrap justify-center gap-5">
 
-        <a href="https://wa.me/3199258704" target="_blank"
-                class="btn-main px-5 py-2 rounded-full text-sm">
-                Comprar
-              </a>
-    <a href="https://www.instagram.com/meno.holding/"target="_blank"
-            class="btn-main px-5 py-2 rounded-full text-sm">
+        <a 
+          href="https://wa.me/553199258704"
+          target="_blank"
+          class="btn-main px-6 py-3 rounded-full text-sm"
+        >
+          WhatsApp
+        </a>
+
+        <a 
+          href="https://www.instagram.com/meno.holding/"
+          target="_blank"
+          class="btn-main px-6 py-3 rounded-full text-sm"
+        >
           Instagram
         </a>
 
       </div>
 
     </div>
-</section>
 
-<footer class="py-8 border-t border-[#d9d4ce]">
+  </section>
 
-  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-4 justify-between items-center">
+  <!-- FOOTER -->
+  <footer class="py-8 border-t border-[#d9d4ce]">
 
-    <h3 class="text-3xl">
-      MÉNŌ
-    </h3>
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-4 justify-between items-center">
 
-    <div class="text-center md:text-right">
-      <p class="text-sm text-[#666]">
-        © 2026 — Todos os direitos reservados.
-      </p>
+      <h3 class="text-3xl">
+        MÉNŌ
+      </h3>
 
-      <p class="text-xs text-[#999] mt-2">
-        Site desenvolvido por 
-        <a 
-          href="https://devduo.tec.br/" 
-          target="_blank" 
-          class="hover:text-black transition"
-        >
-          DevDuo
-        </a>
-      </p>
+      <div class="text-center md:text-right">
+
+        <p class="text-sm text-[#666]">
+          © 2026 — Todos os direitos reservados.
+        </p>
+
+        <p class="text-xs text-[#999] mt-2">
+
+          Site desenvolvido por
+
+          <a 
+            href="https://devduo.tec.br/"
+            target="_blank"
+            class="hover:text-black transition"
+          >
+            DevDuo
+          </a>
+
+        </p>
+
+      </div>
+
     </div>
 
-  </div>
-
-</footer>
+  </footer>
 
 </body>
 </html>
